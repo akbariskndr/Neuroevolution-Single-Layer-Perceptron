@@ -1,15 +1,3 @@
-# This code is an experiment of using genetic algorithm to seek good hyperparameters of a single layer perceptron
-# This method is also called Neurovolution
-
-# The hyperparameters in this implementation are : 
-# initial bias, alpha (learning rate), theta (perceptron's activation function's threshold)
-
-# The implemented single layers perceptron is able to do linear classification with any number of input neurons
-# Just set the neurons parameter in runs method to the desired input neurons amount and set each elements of data
-# with list that have the same number of elements as neurons
-
-# The current data and targets are set up to train perceptron to recognize three inputs of AND boolean operator
-
 from random import random, randint
 
 class Perceptron:
