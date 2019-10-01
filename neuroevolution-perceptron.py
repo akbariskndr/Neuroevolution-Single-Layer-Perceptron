@@ -105,6 +105,9 @@ class Chromosome:
         self.fitness_in_100_scale = 0
         self.epoch_run = 0
 
+        # It's better to set the zero_weights parameter to True
+        # in the Chromosome so that the fitness value could be measured
+        
         self.perceptron = Perceptron(
             neurons=neurons,
             initial_bias=bias,
@@ -220,30 +223,29 @@ class NeuroEvolution:
 
     def run(self):
         self.population = self.generate_initial_populations()
+        self.calculate_fitnesses(self.population)
 
         for _ in range(self.max_iteration):
-            self.calculate_fitnesses()
             parent_candidates = self.selection(self.population)
             next_generation = self.crossover(parent_candidates)
             self.mutation(next_generation)
+
+            self.calculate_fitnesses(next_generation)
             best_chromosome = self.get_best_chromosome(next_generation)
 
-            copy_best_chromosome = best_chromosome.copy()
-            copy_best_chromosome.calculate_fitness()
-
-            if (self.best_perceptron is None) or (copy_best_chromosome.fitness > self.best_perceptron.fitness):
-                self.best_perceptron = copy_best_chromosome
+            if (self.best_perceptron is None) or (best_chromosome.fitness > self.best_perceptron.fitness):
+                self.best_perceptron = best_chromosome
 
 
             self.population = next_generation
             self.generation += 1
-            print(f"Generation {self.generation} with best chromosome {copy_best_chromosome}")
+            print(f"Generation {self.generation} with best chromosome {best_chromosome}")
 
         print(f"Iteration completed with best chromosome = {self.best_perceptron}")
         print(f"With max epochs of {self.best_perceptron.epoch_run}")
 
-    def calculate_fitnesses(self):
-        for i in self.population:
+    def calculate_fitnesses(self, population):
+        for i in population:
             i.calculate_fitness()
 
     def selection(self, population):
