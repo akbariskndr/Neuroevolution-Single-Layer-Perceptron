@@ -23,10 +23,10 @@ Also set the elements of ```data``` list with lists that have the same amount of
 The default ```data``` and ```targets``` variables are set up to train perceptron to recognize three inputs AND boolean operator.
 
 ## Running
-Just execute the file. ```python neuroevolution-perceptron.py```, easy peasy.  You could choose to run a single perceptron process by calling ```run_single_perceptron()``` method or the entire neuroevolution process by calling ```run_neuro_evolution()``` method.
+Just execute the file with ```python neuroevolution-perceptron.py```, easy peasy.  You could choose to run a single perceptron process by calling ```run_single_perceptron()``` method or the entire neuroevolution process by calling ```run_neuro_evolution()``` method.
 
 ## Dependency
-Nothing
+Nothing.
 
 ## Todo
 - Modifying the fitness function to be able to consider the perceptron's accuracy.
