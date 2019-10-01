@@ -17,7 +17,6 @@ The lower the epochs the better the fitness value is.
 The implemented Single Layers Perceptron is able to do Linear Classification with any number of input neurons.
 
 If you want to change the number of input neurons, set the ```neurons``` parameter on Perceptron or NeuroEvolution's constructor to the desired amount.
-
 Also set the elements of ```data``` list with lists that have the same amount of elements as ```neurons``` parameter.
 
 The default ```data``` and ```targets``` variables are set up to train perceptron to recognize three inputs AND boolean operator.
@@ -26,4 +25,4 @@ The default ```data``` and ```targets``` variables are set up to train perceptro
 Nothing
 
 ## Todo
-Modifying the fitness function to be able to consider the perceptron's accuracy
+Modifying the fitness function to be able to consider the perceptron's accuracy.
