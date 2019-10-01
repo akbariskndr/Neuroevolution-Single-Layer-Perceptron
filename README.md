@@ -8,6 +8,7 @@ The hyperparameters in this implementation are :
 - Initial bias
 - Alpha (learning rate)
 - Theta (perceptron's activation function's threshold)
+
 Those hyperparameters became the chromosome's genes.
 
 The fitness function's value corresponds to the amount of epochs a perceptron required to be able to predict the targets correctly.
